@@ -1,0 +1,16 @@
+{
+  "name": "renrenlogin",
+  "version": "0.0.1",
+  "description": "A base module to login www.renren.com.",
+  "main": "lib/login.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sxyizhiren/renrenlogin.git"
+  },
+  "keywords": [
+    "renren",
+    "login"
+  ],
+  "author": "yizhiren",
+  "readmeFilename": "README"
+}
