@@ -9,7 +9,9 @@ npm install renrenlogin
 #Usage:
 
 1.用账号密码登录
+
 var fs=require('fs');
+
 var Login=new (require('renrenlogin').INST)();
 
 
@@ -68,12 +70,14 @@ request-5291是基于request的模块，因为request的Cookie管理器cookie-ja
 var request=require('request-5291');
 
 request=request.defaults({
+
     jar:info.Cookie
+
 });
 
 request('http://www.renren.com',function(){});
 
 ///...
 
-
+有问题邮件我786647787@qq.com
 
