@@ -1,4 +1,4 @@
-var fs=require('fs');
+﻿var fs=require('fs');
 var Login=new (require('./lib/login').INST)();
 
 
@@ -10,8 +10,9 @@ var account={
     isPage:false
 }
 Login.setAccount(account);
+//无cookie，密码登录
 Login.onekeyLogin(function(err,info){
-    console.log(info.logined);
+    console.log('login from password:'+info.logined);
     fs.writeFileSync('info.txt',JSON.stringify(info,null,4), 'utf8');
     loginFromCookie();
 });
@@ -23,7 +24,19 @@ function loginFromCookie(){
     var account=JSON.parse(fs.readFileSync('info.txt','utf8'));
     Login.setAccount(account);
     Login.onekeyLogin(function(err,info){
-        console.log(info.logined);
+        console.log('login from Json Cookie:'+info.logined);
+        loginFromCookieJar(info.Cookie);
+    });
+
+}
+
+//直接传cookiejar进去登录
+function loginFromCookieJar(cookiejar){
+    var account=JSON.parse(fs.readFileSync('info.txt','utf8'));
+    account.Cookie=cookiejar;
+    Login.setAccount(account);
+    Login.onekeyLogin(function(err,info){
+        console.log('login from CookieJar:'+info.logined);
         console.log('Complete.');
     });
 
