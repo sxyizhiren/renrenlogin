@@ -1,6 +1,6 @@
 {
   "name": "renrenlogin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A base module to login www.renren.com.",
   "main": "lib/login.js",
   "repository": {
@@ -16,7 +16,7 @@
   "gitHead": "2f28a143c5a2952c909adee1a4bdb7df9872aaa4",
   "dependencies": {
     "assert": "~0.4.9",
-    "request-5291": "~2.28.0",
+    "request": "~2.31.0",
     "step": "~0.0.5",
     "simple-rsa": "~0.0.2",
     "tough-cookie": "~0.9.15"

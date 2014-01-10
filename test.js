@@ -1,4 +1,5 @@
 ﻿var fs=require('fs');
+var assert=require('assert');
 var Login=new (require('./lib/login').INST)();
 
 
@@ -12,7 +13,8 @@ var account={
 Login.setAccount(account);
 //无cookie，密码登录
 Login.onekeyLogin(function(err,info){
-    console.log('login from password:'+info.logined);
+    assert.equal(true,info.logined);
+    console.log('login from password.');
     fs.writeFileSync('info.txt',JSON.stringify(info,null,4), 'utf8');
     loginFromCookie();
 });
@@ -24,7 +26,8 @@ function loginFromCookie(){
     var account=JSON.parse(fs.readFileSync('info.txt','utf8'));
     Login.setAccount(account);
     Login.onekeyLogin(function(err,info){
-        console.log('login from Json Cookie:'+info.logined);
+        assert.equal(true,info.logined);
+        console.log('login from Json Cookie.');
         loginFromCookieJar(info.Cookie);
     });
 
@@ -36,7 +39,8 @@ function loginFromCookieJar(cookiejar){
     account.Cookie=cookiejar;
     Login.setAccount(account);
     Login.onekeyLogin(function(err,info){
-        console.log('login from CookieJar:'+info.logined);
+        assert.equal(true,info.logined);
+        console.log('login from CookieJar.');
         console.log('Complete.');
     });
 
