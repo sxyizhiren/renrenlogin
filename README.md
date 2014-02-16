@@ -61,13 +61,11 @@ function loginFromCookie(){
 }
 
 
-返回后的info中含有Cookie对象，这是request-5291模块的内置cookie管理器。
+返回后的info中含有Cookie对象，这是request模块的内置cookie管理器。
 
-request-5291是基于request的模块，因为request的Cookie管理器cookie-jar有很多bug，所以开出了分支创建request-5291，替换掉了其中的Cookie管理器。
+后续要发起请求时建议使用request模块，只需把这个返回的Cookie设为request的默认cookie即可。
 
-后续要发起请求时建议使用request-5291，只需把这个返回的Cookie设为request-5291的默认cookie即可。
-
-var request=require('request-5291');
+var request=require('request');
 
 request=request.defaults({
 
