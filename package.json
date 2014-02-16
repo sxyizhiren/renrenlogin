@@ -1,6 +1,6 @@
 {
   "name": "renrenlogin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A base module to login www.renren.com.",
   "main": "lib/login.js",
   "repository": {
